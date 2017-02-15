@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <contextName>spring</contextName>
+    <timestamp key="bySecond" datePattern="yyyy-MM-dd' 'HH:mm:ss"/>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{ISO8601} | %-5.5p | %-16.16t | %-32.32c{1} | %m%n
+            </pattern>
+        </encoder>
+    </appender>
+    <!--<appender name="ALL"-->
+              <!--class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--&lt;!&ndash; daily rollover &ndash;&gt;-->
+            <!--<FileNamePattern>/tmp/log/${apns.service}.%d{yyyy-MM-dd}.log</FileNamePattern>-->
+            <!--&lt;!&ndash; keep 30 days' worth of history &ndash;&gt;-->
+            <!--<maxHistory>30</maxHistory>-->
+        <!--</rollingPolicy>-->
+        <!--<encoder>-->
+            <!--<Pattern>%d{ISO8601} | %-5.5p | %-16.16t | %-32.32c{1} | %m%n</Pattern>-->
+        <!--</encoder>-->
+    <!--</appender>-->
+
+
+    <root level="INFO" additivity="false">
+        <appender-ref ref="STDOUT"/>
+        <!--<appender-ref ref="ALL"/>-->
+    </root>
+
+</configuration>
+

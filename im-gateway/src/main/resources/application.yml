@@ -1,0 +1,21 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: im-gateway
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+zuul:
+  ignoredServices: '*'
+  routes:
+    profile:
+      stripPrefix: false
+      path: /profile/**
+      serviceId: im-userservice
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000

@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: im-userservice
+  datasource:
+    name: im-db
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/im_db
+    username: haizhi
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+eureka:
+  instance:
+    instance-id: ${spring.application.name}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+mybatis:
+  mapperLocations: classpath*:com/mapper/*.xml
+  typeAliasesPackage: com.model
+
+
